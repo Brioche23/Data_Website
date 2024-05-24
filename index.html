@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Data Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container crt-scanlines">
+        <!-- Add this inside the body tag -->
+        <section class="hero-wrapper">
+            <h1>Will there be blood?</h1>
+            <h2>Big Companies & Personal Data</h2>
+        </section>
+        <section data-title="The Internet of people">
+            <h2>The Internet of people</h2>
+            <p class="textbox">In our fully digitalised corporate-led world, Data has become the biggest source of
+                power.
+                Personal data are
+                used to train machines and algorithms about our habits, preferences, and patterns. They foster a
+                market
+                in
+                which to have better (and most likely free) services we pay with our personal information.
+                To understand the magnitude of this exchange of information we can see how the worldwide internet
+                adoption
+                has changed in the last 25 years.</p>
+            <div class="scroll-section-100">
+
+                <div id="line_chart" class="graph_placeholder sticky background"></div>
+                <p class="textbox foreground sticky-top">In just three decades the number of people connected to the
+                    internet went from from
+                    basically zero to almost 5 billion. Phones, Tablets, and Personal Computers (and also Fridges) now
+                    allow
+                    us to exist (and potentially be exposed) in the digital realm.</p>
+            </div>
+            <p class="textbox quote">Personal data is often compared to oil—it powers today’s most profitable
+                corporations, just like fossil fuels energized those of the past. <br> - Wired</p>
+            <p class="textbox">Despite being submerged in this data-exchanging network we rarely know what data we give
+                away, and where that data ends up.</p>
+        </section>
+        <section class="pizza">
+            <!-- Make Sticky section with 6 paragraphs and a counter going from 1 to 6 while the paragraphs appear -->
+            <h2 class="">Pizza Time</h2>
+            <p class="textbox">In an article, the Wall Street Journal showed how much potential data we give away during
+                a simple move and pizza night, some data are directly provided from us to the companies, and others (the
+                vast majority) are additionally collected.</p>
+
+            <div class="col-wrapper">
+                <div class="col">
+                    <p class="textbox pizza-text" id="pizza-01">Two friends plan the night through iMessage.</p>
+                    <p class="textbox pizza-text" id="pizza-02">One friend orders the Pizzas with the Domino’s app using
+                        an Amazon Echo.</p>
+                    <p class="textbox pizza-text" id="pizza-03">The other friend uses Google Maps to drive to her
+                        friend’s house.</p>
+                    <p class="textbox pizza-text" id="pizza-04">They take a selfie and upload it to Facebook,
+                        automatically recognizing the faces.</p>
+                    <p class="textbox pizza-text" id="pizza-05">They buy a movie on Apple TV.</p>
+                    <p class="textbox pizza-text" id="pizza-06">This whole process ends up with at least 53 pieces of
+                        information given, directly or indirectly to different companies.</p>
+                </div>
+                <div class="col">
+                    <div id="pizza-phases" class="graph_placeholder sticky">
+                        <p id="p-state">00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-wrapper">
+            <h2>Data Breaches</h2>
+            <p class="textbox">A data breach is defined as any security incident in which unauthorized parties gain
+                access to sensitive or confidential information, including personal data (Social Security numbers, bank
+                account numbers, healthcare data) or corporate data (customer data records, intellectual property,
+                financial information). [IBM]</p>
+            <div id="controls">
+                <!-- <button onclick="groupBy('year')">Group by Year</button>
+            <button onclick="groupBy('industry')">Group by Industry</button> -->
+                <!-- <input placeholder="Domain" type="number" id="buttonYlim" value="3" /> -->
+                <select title="Filter by" id="clusterParameter">
+                    <option value="orgType">Organization Type</option>
+                    <option value="breachReasons">Breach Reasons</option>
+                    <option value="country">Country</option>
+                </select>
+                <button id="toggleButton">Toggle Scatterplot</button>
+                <!-- Add a slider -->
+                <input type="range" name="sliderYlim" id=sliderYlim min="1" max="40" value="30" />
+            </div>
+
+            <div class="chart" id="scatter_cluster_chart"></div>
+            <div id="tooltip" class="hidden">
+                <p><strong id="company-name"></strong></p>
+                <p>Year: <span id="year"></span></p>
+                <p>Records Affected: <span id="records"></span></p>
+                <p>Org Type: <span id="org-type"></span></p>
+                <p>Country: <span id="country"></span></p>
+                <p>Breach Reasons: <span id="breach-reasons"></span></p>
+                <p>Links: <span id="links"></span></p>
+            </div>
+        </section>
+
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <!-- <script src="simulation.js"></script> -->
+        <!-- <script src="scatterplot.js"></script> -->
+        <script src="line_chart.js"></script>
+        <script src="scatter_cluster.js"></script>
+        <script src="scroll.js"></script>
+
+
+</body>
+
+</html>

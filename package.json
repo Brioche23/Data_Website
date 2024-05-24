@@ -1,0 +1,11 @@
+{
+  "name": "data_website",
+  "version": "1.0.0",
+  "description": "Data Visualization website made for the Information Design course 2024 at Aalto University",
+  "main": "line_chart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
