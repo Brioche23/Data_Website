@@ -10,7 +10,7 @@ let vw = Math.max(
 // Set the dimensions and margins of the graph
 let margin = { top: 50, right: 80, bottom: 30, left: 80 },
   width = 800 - margin.left - margin.right,
-  height = 800 - margin.top - margin.bottom;
+  height = 1000 - margin.top - margin.bottom;
 
 // Append the SVG object to the body of the page
 let svg = d3
@@ -54,25 +54,30 @@ d3.csv("data/breaches_exp_geo.csv", (d) => {
 });
 
 function showTooltip(event, d) {
-  const tooltip = d3.select("#tooltip");
+  const tooltip = d3.select("#scatter-tooltip");
   tooltip.select("#company-name").text(d.company);
   tooltip.select("#year").text(d.year);
   tooltip.select("#records").text(d.recordsAffected);
   tooltip.select("#org-type").text(d.orgType.join(", "));
   tooltip.select("#country").text(toTitleCase(d.country));
-  tooltip.select("#breach-reasons").text(d.breachReasons.join(", "));
+  if (d.breachReasons[0] != "") {
+    console.log(d.breachReasons);
+    tooltip
+      .select("#breach-reasons")
+      .text("Breach Reasons: " + d.breachReasons.join(", "));
+  }
 
-  const linksContainer = tooltip.select("#links");
-  linksContainer.html("");
+  // const linksContainer = tooltip.select("#links");
+  // linksContainer.html("");
 
-  d.referenceLinks.forEach((link) => {
-    linksContainer
-      .append("a")
-      .attr("href", link)
-      .attr("target", "_blank")
-      .text(link)
-      .append("br");
-  });
+  // d.referenceLinks.forEach((link) => {
+  //   linksContainer
+  //     .append("a")
+  //     .attr("href", link)
+  //     .attr("target", "_blank")
+  //     .text(link)
+  //     .append("br");
+  // });
   tooltip
     .classed("hidden", false)
     .style("left", event.pageX + 5 + "px")
@@ -80,8 +85,9 @@ function showTooltip(event, d) {
 }
 
 function hideTooltip() {
-  d3.select("#tooltip").classed("hidden", true);
+  d3.select("#scatter-tooltip").classed("hidden", true);
 }
+
 function createClusters(data, parameter) {
   const clusters = {};
   const clusterPadding = 10;
@@ -124,10 +130,10 @@ function createClusters(data, parameter) {
 }
 
 function createVisualization(data) {
-  const scaleSize = d3
-    .scaleLog()
-    .domain(d3.extent(data, (d) => d.recordsAffected))
-    .range([5, 50]);
+  // const scaleSize = d3
+  //   .scaleLog()
+  //   .domain(d3.extent(data, (d) => d.recordsAffected))
+  //   .range([5, 50]);
   const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
   let x = d3.scaleLinear().domain([2000, 2025]).range([0, width]);
@@ -148,7 +154,8 @@ function createVisualization(data) {
     .enter()
     .append("circle")
     .attr("class", "dot")
-    .attr("r", (d) => Math.sqrt(scaleSize(d.recordsAffected)))
+    // .attr("r", (d) => Math.sqrt(scaleSize(d.recordsAffected)))
+    .attr("r", "5")
     .attr("fill", (d) => colorScale(d.orgType))
     .on("mouseover", showTooltip)
     .on("mouseout", hideTooltip);
@@ -198,7 +205,7 @@ function createVisualization(data) {
         .data(Object.keys(clusters))
         .join("text")
         .attr("x", (d) => clusters[d].x)
-        .attr("y", (d) => clusters[d].y - 35)
+        .attr("y", (d) => clusters[d].y - 50)
         .attr("text-anchor", "middle")
         .attr("class", "cluster-label")
         .text((d) => `${d} (${clusters[d].count})`);
@@ -250,8 +257,18 @@ function createVisualization(data) {
   d3.select("#toggleButton").on("click", function () {
     if (isClustered) {
       scatterPlot();
+      d3.select("#toggleButton")
+        .transition()
+        .duration(500)
+        .style("background-color", "black")
+        .style("color", "white");
     } else {
       clusterView(currentClusterParameter);
+      d3.select("#toggleButton")
+        .transition()
+        .duration(500)
+        .style("background-color", "white")
+        .style("color", "black");
     }
     isClustered = !isClustered;
   });

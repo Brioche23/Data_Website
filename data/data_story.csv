@@ -1,0 +1,54 @@
+layer_name,company,type,content
+apple_1,apple,direct,End-to-end encrypted text
+apple_2,apple,direct,iMessage address information
+apple_add_1,apple,additional,Anonymized time stamps
+apple_add_2,apple,additional,Anonymized message routing information
+dominos_1,domino's,direct,Payment and billing information
+dominos_2,domino's,direct,Type of pizza ordered
+dominos_3,domino's,direct,Quantity of order
+dominos_add_1,domino's,additional,Transcript of what she said
+dominos_add_2,domino's,additional,Hardware settings
+dominos_add_3,domino's,additional,Operating system
+dominos_add_4,domino's,additional,Performance statistics
+alexa_1,amazon,direct,Voice characteristics
+alexa_2,amazon,direct,Content of request
+alexa_add_1,amazon,additional,Interaction history
+alexa_add_2,amazon,additional,Type of Echo device
+alexa_add_3,amazon,additional,Location
+alexa_add_4,amazon,additional,Last four digits of credit card
+maps_1,google,direct,Address of her destination
+maps_2,google,direct,Location
+maps_add_1,google,additional,Speed
+maps_add_2,google,additional,Cardinal direction of travel
+maps_add_3,google,additional,Device type (iPhone X)
+maps_add_4,google,additional,IP address assigned to device
+maps_add_5,google,additional,Closest Wi-Fi routers
+maps_add_6,google,additional,Closest cell towers
+meta_1,meta,direct,Uploaded photo
+meta_2,meta,direct,Text submitted with photo
+meta_3,meta,direct,Facial recognition
+meta_add_1,meta,additional,Photo analysis
+meta_add_2,meta,additional,Location of the photo (if included in metadata)
+meta_add_3,meta,additional,Date
+meta_add_4,meta,additional,Type of device
+meta_add_5,meta,additional,Device ID
+meta_add_6,meta,additional,Device operating system
+meta_add_7,meta,additional,Battery level
+meta_add_8,meta,additional,Signal strength
+meta_add_9,meta,additional,Bluetooth signal
+meta_add_10,meta,additional,Connection speed
+meta_add_11,meta,additional,Available storage
+meta_add_12,meta,additional,App and file names and types
+meta_add_13,meta,additional,Nearby Wi-Fi beacons and cell towers
+meta_add_14,meta,additional,Nearby devices such as a TV for phone-to-TV streaming
+meta_add_15,meta,additional,Time zone
+meta_add_16,meta,additional,Mobile operator or internet service provider
+meta_add_17,meta,additional,IP address
+meta_add_18,meta,additional,"Time, frequency and duration of activities"
+meta_add_19,meta,additional,Hardware version
+meta_add_20,meta,additional,Software version
+apple_tv_1,apple tv,direct,Movie selected
+apple_tv_2,apple tv,direct,Apple ID
+apple_tv_3,apple tv,direct,Credit card information
+apple_tv_add_1,apple tv,additional,Internet bandwidth information
+apple_tv_add_2,apple tv,additional,Purchase history
