@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Data Visualization</title>
+    <title>Data Breaches</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,8 +20,8 @@
             </div>
 
         </section>
-        <section data-title="The Internet of people">
-            <h2>The Internet of people</h2>
+        <section data-title="The Internet of people 🗣️">
+            <h2>The Internet of people 🗣️</h2>
             <p class="textbox">In our fully digitalised corporate-led world, Data has become the biggest source of
                 power.
                 Personal data are
@@ -37,7 +37,7 @@
             <div class="scroll-section-100">
 
                 <div id="line_chart" class="graph_placeholder sticky background"></div>
-                <p class="textbox foreground sticky-top">In just three decades the number of people connected to the
+                <p class="textbox foreground ">In just three decades the number of people connected to the
                     internet went from from
                     basically zero to almost 5 billion. Phones, Tablets, and Personal Computers (and also Fridges) now
                     allow
@@ -52,27 +52,48 @@
             <!-- Make Sticky section with 6 paragraphs and a counter going from 1 to 6 while the paragraphs appear -->
             <h2 class="">Pizza Time 🍕</h2>
             <p class="textbox">In an article, the Wall Street Journal showed how much potential data we give away during
-                a simple move and pizza night, some data are directly provided from us to the companies, and others (the
-                vast majority) are additionally collected.</p>
+                a simple movie and pizza night, some data are directly provided from us to the companies<span
+                    class="circle direct">ai</span>, and others
+                (the vast majority) are additionally collected<span class="circle additional">ai</span>.</p>
+            </p>
+            <p class="textbox">[Move your mouse over the dots to precisely see what kinds of data are being collected]
 
             <div class="col-wrapper">
                 <div class="col">
-                    <p class="textbox pizza-text" id="pizza-01" data-value="0">Two friends plan the night through
-                        iMessage.</p>
-                    <p class="textbox pizza-text" id="pizza-02" data-value="1">One friend orders the Pizzas with the
-                        Domino’s app.</p>
-                    <p class="textbox pizza-text" id="pizza-03" data-value="2">She access the app using an Amazon Echo.
+                    <p class=" pizza-text" id="pizza-01" data-value="0">Two friends plan the night through
+                        <strong>Apple's iMessage</strong>.
                     </p>
-                    <p class="textbox pizza-text" id="pizza-04" data-value="3">The other friend uses Google Maps to
+                    <p class=" pizza-text" id="pizza-02" data-value="1">One friend orders the pizzas with the
+                        <strong>Domino’s Pizza</strong>
+                        app.
+                    </p>
+                    <p class=" pizza-text" id="pizza-03" data-value="2">She access the app using an
+                        <strong>
+                            Amazon Echo.
+                        </strong>
+                    </p>
+                    <p class=" pizza-text" id="pizza-04" data-value="3">The other friend uses
+                        <strong>
+                            Google Maps
+                        </strong>
+                        to
                         drive to her
-                        friend’s house.</p>
-                    <p class="textbox pizza-text" id="pizza-05" data-value="4">They take a selfie and upload it to
-                        Facebook,
-                        automatically recognizing the faces.</p>
-                    <p class="textbox pizza-text" id="pizza-06" data-value="5">They buy a movie on Apple TV.</p>
-                    <p class="textbox pizza-text" id="pizza-07" data-value="6">This whole process ends up with at least
+                        friend’s house.
+                    </p>
+                    <p class=" pizza-text" id="pizza-05" data-value="4">They take a selfie and upload it to
+                        <strong>
+                            Facebook,
+                        </strong>
+                        automatically recognizing the faces.
+                    </p>
+                    <p class=" pizza-text" id="pizza-06" data-value="5">They buy a movie on
+                        <strong>
+                            Apple TV.
+                        </strong>
+                    </p>
+                    <p class=" pizza-text" id="pizza-07" data-value="6">This whole process ends up with at least
                         53 pieces of
-                        information given, directly or indirectly to different companies.</p>
+                        information given, directly or indirectly, to five different companies.</p>
                 </div>
                 <div class="col">
                     <div id="pizza-phases" class=" sticky">
@@ -89,20 +110,26 @@
         </section>
 
         <section class="text-wrapper">
-            <h2>Data Breaches</h2>
-            <p class="textbox">A data breach is defined as any security incident in which unauthorized parties gain
+            <h2>Data Breaches 📉</h2>
+            <p class="textbox">A
+                <strong>
+                    data breach
+                </strong>
+                is defined as any security incident in which unauthorized parties gain
                 access to sensitive or confidential information, including personal data (Social Security numbers, bank
                 account numbers, healthcare data) or corporate data (customer data records, intellectual property,
-                financial information). [IBM]</p>
+                financial information). [IBM]
+            </p>
             <p class="textbox">Always according to the IBM Data Breach Report of 2023, the average cost of a Data Breach
-                is 4.45 Million dollars, and the cost of a single stolen record has reached 165$.
-                <br>
+                is 4.45 Million dollars, and the cost of a single stolen record has reached 165$...
+            </p>
+            <p class="textbox">
+                Let me say it again: 165$
+            </p>
+            <p class="textbox">
                 165$, that's how your data is worth. It seems like we are talking about stock market values, with
                 NASDAQ, Nikkei, or BitCoin gaining or losing value over time. But we are not.
-                <br>
-                This does not apply to private companies only; as I’m writing this article, on May 14th, 2024, The City
-                of Helsinki’s educational and training departments were victims of a major data breach that potentially
-                stole around 120.000 data belonging to pupils, guardians, and City employees.
+
             </p>
             <p class="textbox">
                 This does not apply to private companies only; as I’m writing this article, on May 14th, 2024, The City
@@ -120,7 +147,7 @@
                 </select>
                 <button class="input" id="toggleButton">Toggle Scatterplot</button>
                 <!-- Add a slider -->
-                <input title="Slider" type="range" name="sliderYlim" id=sliderYlim min="1" max="40" value="30" />
+                <input title="Slider" type="range" name="sliderYlim" id=sliderYlim min=".1" max="40" value="30" />
             </div>
 
             <div class="chart" id="scatter_cluster_chart"></div>
@@ -134,6 +161,55 @@
                 <!-- <p>Links: <span id="links"></span></p> -->
             </div>
         </section>
+        <section class="text-wrapper">
+            <h2>Conclusions </h2>
+            <p class="textbox">
+                165$.
+
+                According to the IBM Data Breach Report of 2023 that’s the cost of a single stolen record, while the
+                average cost of a Data Breach is 4.45 Million dollars.
+
+                Let me say it again: 165$
+
+                That's what your data is worth. It seems like we are talking about stock market values, with NASDAQ,
+                Nikkei, or BitCoin gaining or losing value over time. But we are not.
+
+                This does not apply to private companies only; as I’m writing this article, on May 14th, 2024, The City
+                of Helsinki’s educational and training departments were victims of a major data breach that potentially
+                stole around 120.000 data belonging to pupils, guardians, and city employees.
+
+                We put ourselves in the hands of big companies: our faces, our voices, and our thoughts.
+
+                …
+            </p>
+        </section>
+        <footer>
+            <div>
+                <p>References</p>
+                <ul>
+                    <li><a href="">Article 1</a></li>
+                    <li><a href="">Article 1</a></li>
+                    <li><a href="">Article 1</a></li>
+                    <li><a href="">Article 1</a></li>
+                    <li><a href="">Article 1</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>Datasets</p>
+                <ul>
+                    <li><a href="">Data 1</a></li>
+                    <li><a href="">Data 1</a></li>
+                    <li><a href="">Data 1</a></li>
+                    <li><a href="">Data 1</a></li>
+                    <li><a href="">Data 1</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>Information Design 2024</p>
+                <p>Aalto University</p>
+                <p>Made by <a href="https://www.alessiobrioschi.it/">Alessio Brioschi</a></p>
+            </div>
+        </footer>
     </div>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <!-- <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script> -->

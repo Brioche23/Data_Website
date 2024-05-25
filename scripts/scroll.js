@@ -1,7 +1,7 @@
 let p_state = 0;
 let p_state_text = document.querySelector("#p-state");
 
-let currentPhase = 0;
+let currentPhase;
 
 // let triggerInput;
 
@@ -80,6 +80,7 @@ d3.csv("data/data_story.csv").then((data) => {
           if (companyIndex == 5) {
             console.log("End loop!");
             draw_all = true;
+            //! At 6 trigger rearrangement
           }
 
           let circles = svg
@@ -137,9 +138,9 @@ d3.csv("data/data_story.csv").then((data) => {
 
   console.log(data);
   // Set up the SVG canvas dimensions
-  const margin = { top: 50, right: 50, bottom: 50, left: 30 };
-  const width = 500 - margin.left - margin.right;
-  const height = 500 - margin.top - margin.bottom;
+  const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+  const width = 300 - margin.left - margin.right;
+  const height = 350 - margin.top - margin.bottom;
   const svg = d3
     .select("#pizza-phases")
     .append("svg")
@@ -152,7 +153,7 @@ d3.csv("data/data_story.csv").then((data) => {
   const companies = d3.groups(data, (d) => d.company);
 
   // Draw circles for each company
-  drawCompanyCircles(companies, 0);
+  // drawCompanyCircles(companies, 0);
 });
 
 function showPizzaTooltip(event, d) {

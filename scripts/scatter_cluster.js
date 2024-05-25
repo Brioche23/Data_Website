@@ -8,8 +8,8 @@ let vw = Math.max(
 );
 
 // Set the dimensions and margins of the graph
-let margin = { top: 50, right: 80, bottom: 30, left: 80 },
-  width = 800 - margin.left - margin.right,
+let margin = { top: 50, right: 80, bottom: 100, left: 80 },
+  width = 900 - margin.left - margin.right,
   height = 1000 - margin.top - margin.bottom;
 
 // Append the SVG object to the body of the page
@@ -22,7 +22,7 @@ let svg = d3
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Read Data
-d3.csv("data/breaches_exp_geo.csv", (d) => {
+d3.csv("data/breaches_exp_geo_macro.csv", (d) => {
   const parseArray = (str) => {
     return str.slice(1, -1).replace(/'/g, "").split(", ");
   };
@@ -32,7 +32,8 @@ d3.csv("data/breaches_exp_geo.csv", (d) => {
     name: d["name"],
     year: +d["Year"],
     recordsAffected: +d["Number of Records Affected"],
-    orgType: parseArray(d["Organization Type"]),
+    orgType: d["Organization Type"],
+    macrocat: d["macrocategory"],
     breachReasons: parseArray(d["Reasons for Breach"]),
     referenceLinks: parseArray(d["Reference Link(s)"]),
     domain: d["domain"],
@@ -58,7 +59,7 @@ function showTooltip(event, d) {
   tooltip.select("#company-name").text(d.company);
   tooltip.select("#year").text(d.year);
   tooltip.select("#records").text(d.recordsAffected);
-  tooltip.select("#org-type").text(d.orgType.join(", "));
+  tooltip.select("#org-type").text(toTitleCase(d.orgType));
   tooltip.select("#country").text(toTitleCase(d.country));
   if (d.breachReasons[0] != "") {
     console.log(d.breachReasons);
@@ -156,11 +157,46 @@ function createVisualization(data) {
     .attr("class", "dot")
     // .attr("r", (d) => Math.sqrt(scaleSize(d.recordsAffected)))
     .attr("r", "5")
-    .attr("fill", (d) => colorScale(d.orgType))
+    .attr("fill", (d) => colorScale(d.macrocat))
     .on("mouseover", showTooltip)
     .on("mouseout", hideTooltip);
 
   const labels = svg.append("g").attr("class", "cluster-labels");
+
+  const legend = svg.append("g").attr("transform", `translate(0,${height})`);
+
+  const legendRectSize = 10;
+  const legendSpacing = 6;
+
+  // group the data: I want to draw one line per group
+  const sumstat = d3.group(data, (d) => d.macrocat); // nest function allows to group the calculation per level of a factor
+
+  console.log(sumstat);
+  const legendItem = legend
+    .selectAll(".legend-item")
+    .data(sumstat)
+    .enter()
+    .append("g")
+    .attr("class", "legend-item")
+    .attr(
+      "transform",
+      (d, i) =>
+        `translate(0,  ${
+          margin.bottom - 20 - i * (legendRectSize + legendSpacing)
+        })`
+    );
+
+  legendItem
+    .append("circle")
+    .attr("width", legendRectSize)
+    .attr("r", legendRectSize)
+    .attr("fill", (d) => colorScale(d[0]));
+
+  legendItem
+    .append("text")
+    .attr("x", legendRectSize + legendSpacing)
+    .attr("y", legendRectSize - legendSpacing)
+    .text((d) => d[0]);
 
   function scatterPlot() {
     d3.select("#sliderYlim").transition().duration(300).style("opacity", "1");
@@ -208,7 +244,7 @@ function createVisualization(data) {
         .attr("y", (d) => clusters[d].y - 50)
         .attr("text-anchor", "middle")
         .attr("class", "cluster-label")
-        .text((d) => `${d} (${clusters[d].count})`);
+        .text((d) => `${toTitleCase(d)} (${clusters[d].count})`);
 
     simulation = d3
       .forceSimulation(data)
