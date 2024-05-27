@@ -138,9 +138,9 @@ d3.csv("data/data_story.csv").then((data) => {
 
   console.log(data);
   // Set up the SVG canvas dimensions
-  const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+  const margin = { top: 100, right: 10, bottom: 10, left: 10 };
   const width = 300 - margin.left - margin.right;
-  const height = 350 - margin.top - margin.bottom;
+  const height = 400 - margin.top - margin.bottom;
   const svg = d3
     .select("#pizza-phases")
     .append("svg")
@@ -151,6 +151,47 @@ d3.csv("data/data_story.csv").then((data) => {
 
   // Group data by company
   const companies = d3.groups(data, (d) => d.company);
+
+  const labels = svg.append("g").attr("class", "cluster-labels");
+
+  const legend = svg.append("g").attr("transform", `translate(30,-40)`);
+  const legendRectSize = 5;
+  const legendSpacing = 10;
+
+  // group the data: I want to draw one line per group
+  const sumstat = d3.group(data, (d) => d.type); // nest function allows to group the calculation per level of a factor
+
+  console.log(data);
+  const legendItem = legend
+    .selectAll(".legend-item")
+    .data(sumstat)
+    .enter()
+    .append("g")
+    .attr("class", "legend-item")
+    .attr(
+      "transform",
+      (d, i) =>
+        `translate(0,  ${
+          margin.bottom - 20 - i * (legendRectSize + legendSpacing)
+        })`
+    );
+
+  legendItem
+    .append("circle")
+    .attr("width", legendRectSize)
+    .attr("r", legendRectSize)
+    .attr("class", (d) => d[0]);
+  // .attr("fill", (d) => colorScale(d[0]));
+
+  function typeName(name) {
+    if (name === "additional") return "Company-collected";
+    else return "User-given";
+  }
+  legendItem
+    .append("text")
+    .attr("x", legendRectSize + legendSpacing)
+    .attr("y", legendRectSize - 2)
+    .text((d) => typeName(d[0]));
 
   // Draw circles for each company
   // drawCompanyCircles(companies, 0);

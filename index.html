@@ -60,40 +60,84 @@
 
             <div class="col-wrapper">
                 <div class="col">
-                    <p class=" pizza-text" id="pizza-01" data-value="0">Two friends plan the night through
-                        <strong>Apple's iMessage</strong>.
+                    <div class=" pizza-text" id="pizza-01" data-value="0">
+                        <h3 class="pizza-title">Planning 📱</h3>
+                        <p>
+                            Two friends plan the night through
+                            <strong>Apple's iMessage</strong>. Messages are encrypted, so Apple never knows the words
+                            exchanged, but it can use other anonymous metadata to optimize server bandwidth.
+                        </p>
+                    </div>
+                    <div class=" pizza-text" id="pizza-02" data-value="1">
+                        <h3 class="pizza-title">Ordering the pizzas 🍕…</h3>
+                        <p>
+                            One friend orders the pizzas with the
+                            <strong>
+                                Domino’s app,
+                            </strong>
+                            which requires her to give payment information and, of course, the order details. While
+                            doing so Domino’s records a transcript of what she says.
+                        </p>
+                    </div>
+                    <div class=" pizza-text" id="pizza-03" data-value="2">
+                        <h3 class="pizza-title">…using the voice 🎙️</h3>
+
+                        <p>
+
+
+                            She access the app using an
+                            <strong>
+                                Amazon Echo,
+                            </strong> that creates a log of the interactions and records details about the user’s voice.
+                        </p>
+                    </div>
+                    <div class=" pizza-text" id="pizza-04" data-value="3">
+                        <h3 class="pizza-title">Driving there 🗺️</h3>
+
+                        <p>
+                            The other friend uses
+                            <strong>
+                                Google Maps
+                            </strong>
+                            to drive to her friend’s house. Google collects both traveling information and sensorial
+                            data from the phone and compares them with nearby drivers.
+                        </p>
+                    </div>
+                    <div class=" pizza-text" id="pizza-05" data-value="4">
+                        <h3 class="pizza-title">Being social 🤳</h3>
+                        <p>
+
+                            They take a selfie and upload it to
+                            <strong>
+                                Facebook,
+                            </strong>
+                            automatically recognizing the faces. This is a feature that they choose to enable, while as
+                            additional info Meta collects a bunch of the phone’s metadata, especially the ones related
+                            to
+                            location, in order to suggest nearby events.
+                        </p>
+                    </div>
+                    <div class=" pizza-text" id="pizza-06" data-value="5">
+                        <h3 class="pizza-title">The Movie 🍿
+                        </h3>
+                        <p>
+                            They buy a movie on
+                            <strong>
+                                Apple TV,
+                            </strong>
+                            they decide to rent the 2003 classic “The Room”. This information is going to be used to
+                            suggest similar films in the future, such as “Troll 2” or “Cruel Jaws”. In the process,
+                            payment information and bandwidth speed are saved as well.
+                        </p>
+
+                    </div>
+                    <p class=" pizza-text" id="pizza-07" data-value="6">This whole process ends up with at least 53
+                        pieces of information given, directly or indirectly to different companies. 15 are directly
+                        user-provided, while the remaining 38 are additionally collected by the companies.
+                        <br>
+                        Out of these 53 pieces of information, 23 are from Meta alone.
                     </p>
-                    <p class=" pizza-text" id="pizza-02" data-value="1">One friend orders the pizzas with the
-                        <strong>Domino’s Pizza</strong>
-                        app.
-                    </p>
-                    <p class=" pizza-text" id="pizza-03" data-value="2">She access the app using an
-                        <strong>
-                            Amazon Echo.
-                        </strong>
-                    </p>
-                    <p class=" pizza-text" id="pizza-04" data-value="3">The other friend uses
-                        <strong>
-                            Google Maps
-                        </strong>
-                        to
-                        drive to her
-                        friend’s house.
-                    </p>
-                    <p class=" pizza-text" id="pizza-05" data-value="4">They take a selfie and upload it to
-                        <strong>
-                            Facebook,
-                        </strong>
-                        automatically recognizing the faces.
-                    </p>
-                    <p class=" pizza-text" id="pizza-06" data-value="5">They buy a movie on
-                        <strong>
-                            Apple TV.
-                        </strong>
-                    </p>
-                    <p class=" pizza-text" id="pizza-07" data-value="6">This whole process ends up with at least
-                        53 pieces of
-                        information given, directly or indirectly, to five different companies.</p>
+
                 </div>
                 <div class="col">
                     <div id="pizza-phases" class=" sticky">
@@ -162,32 +206,54 @@
             </div>
         </section>
         <section class="text-wrapper">
-            <h2>Conclusions </h2>
-            <p class="textbox">
-                165$.
-
-                According to the IBM Data Breach Report of 2023 that’s the cost of a single stolen record, while the
-                average cost of a Data Breach is 4.45 Million dollars.
-
-                Let me say it again: 165$
-
-                That's what your data is worth. It seems like we are talking about stock market values, with NASDAQ,
-                Nikkei, or BitCoin gaining or losing value over time. But we are not.
-
-                This does not apply to private companies only; as I’m writing this article, on May 14th, 2024, The City
-                of Helsinki’s educational and training departments were victims of a major data breach that potentially
-                stole around 120.000 data belonging to pupils, guardians, and city employees.
-
-                We put ourselves in the hands of big companies: our faces, our voices, and our thoughts.
-
-                …
-            </p>
+            <div class="h-screen">
+                <h2>In big tech, we trust (?)</h2>
+                <p class="textbox">
+                    When dealing with data online, we have to consider two main factors:
+                    <strong>
+                        value
+                    </strong>
+                    and
+                    <strong>
+                        reputation.
+                    </strong>
+                </p>
+            </div>
+            <div class="h-6screen">
+                <h3 class="pizza-title">Value 💰</h3>
+                <p id="counter" class="huge-text sticky background">
+                    0
+                    <!-- <span>$</span> -->
+                </p>
+                <p class="counter-text textbox foreground" data-index="0">
+                    According to the IBM Data Breach Report of 2023 that’s the cost of a single stolen record.
+                </p>
+                <p class="counter-text textbox foreground margin-top-half-screen" data-index="1">
+                    While the
+                    average cost of a Data Breach is 4.45 Million dollars.
+                </p>
+                <p class="counter-text  textbox foreground margin-top-half-screen">
+                    That's what your data is worth. It seems like we are talking about stock market values, with NASDAQ,
+                    Nikkei, or BitCoin gaining or losing value over time. But we are not.
+                </p>
+                <p class="counter-text  textbox foreground margin-top-half-screen" data-index="2">
+                    This does not apply to private companies only; as I’m writing this article, on May 14th, 2024, The
+                    City of Helsinki’s educational and training departments were victims of a major data breach that
+                    potentially stole around 120.000 data belonging to pupils, guardians, and city employees. </p>
+                <p class="counter-text  textbox foreground margin-top-half-screen">
+                    These data are sold and resold to data brokers, firms that store huge amounts of data to be resold
+                    to marketers, investors, advertising companies, or privates.
+                    This can lead to various uses of one’s data: from extremely targeted advertising to more toxic and
+                    dangerous practices, such as Doxing: the unavailing of someone’s private and sensible information,
+                    such as the home address. </p>
+            </div>
         </section>
         <footer>
             <div>
                 <p>References</p>
                 <ul>
-                    <li><a href="">Article 1</a></li>
+                    <li><a href="https://www.wsj.com/graphics/how-pizza-night-can-cost-more-in-data-than-dollars/">How
+                            Pizza Night Can Cost More in Data Than Dollars</a></li>
                     <li><a href="">Article 1</a></li>
                     <li><a href="">Article 1</a></li>
                     <li><a href="">Article 1</a></li>
@@ -219,6 +285,7 @@
     <script src="scripts/line_chart.js"></script>
     <script src="scripts/scatter_cluster.js"></script>
     <script src="scripts/scroll.js"></script>
+    <script src="scripts/counter.js"></script>
     <!-- <script src="libraries/p5.min.js"></script>
     <script src="scripts/sketch.js"></script> -->
 

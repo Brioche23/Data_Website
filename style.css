@@ -15,6 +15,28 @@ h1 {
   margin: 0;
 }
 
+.h-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.h-6screen {
+  height: 600vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.huge-text {
+  font-size: 128px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -163,6 +185,8 @@ input[type="range"]:focus::-ms-fill-upper {
   --webkit-backdrop-filter: blur(10px);
   top: 2rem;
   padding: 1rem;
+  border: 1px black solid;
+  border-radius: 10px;
 }
 
 h2 {
@@ -176,6 +200,10 @@ h2 {
   width: 66%;
   margin: 0 auto;
   margin-bottom: 2rem;
+}
+
+.margin-top-half-screen {
+  margin-top: 50vh;
 }
 
 .quote {
@@ -203,6 +231,7 @@ h2 {
   /* border: 1px solid black; */
   position: sticky;
   top: 25vh;
+  min-height: 50vh;
 }
 .sticky-top {
   /* background-color: rgba(3, 172, 206, 0.5); */
