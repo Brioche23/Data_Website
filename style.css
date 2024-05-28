@@ -1,13 +1,43 @@
 body {
   font-family: "Hack", Arial, sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
   overflow-x: hidden;
   margin: 0;
-  transition: all;
+  /* transition: all;
   transition-duration: 5000ms;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out; */
+  scroll-behavior: smooth;
   /* display: flex;
   /* overflow-x: hidden; */
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  z-index: 30;
+  margin: 0 auto;
+}
+
+nav li {
+  list-style: none;
+  font-size: 12px;
+}
+nav li a {
+  color: #000;
+  text-decoration: none;
 }
 
 section {
@@ -69,12 +99,6 @@ h1 {
   text-align: center;
   display: flex;
   align-items: center;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  /* padding: 1rem; */
 }
 
 .hero-wrapper {

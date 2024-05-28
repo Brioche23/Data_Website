@@ -50,7 +50,7 @@ document.addEventListener("scroll", function () {
     }
   });
 
-  let sections = document.querySelectorAll("section");
+  // let sections = document.querySelectorAll("section");
   let black = false;
   let body = document.querySelector("body");
   sections.forEach((s) => {
@@ -82,4 +82,16 @@ document.addEventListener("scroll", function () {
   //   // if(bcr.y < window.innerHeight && bcr.y > 0 ){
   //   //     console.log("it's visible!!")
   //   // }
+});
+
+let sections = document.querySelectorAll("section");
+let nav = document.querySelector("#navbar");
+console.log(nav);
+sections.forEach((s) => {
+  if (s.dataset.title) {
+    console.log(s);
+    const nav_el = document.createElement("li");
+    nav_el.innerHTML = `<a href="#${s.id}" >${s.dataset.title}</a>`;
+    nav.appendChild(nav_el);
+  }
 });
