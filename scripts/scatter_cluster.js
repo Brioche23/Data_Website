@@ -8,7 +8,7 @@ let vw = Math.max(
 );
 
 // Set the dimensions and margins of the graph
-let margin = { top: 50, right: 80, bottom: 100, left: 80 },
+let margin = { top: 50, right: 80, bottom: 200, left: 80 },
   width = 900 - margin.left - margin.right,
   height = 1000 - margin.top - margin.bottom;
 
@@ -236,6 +236,7 @@ function createVisualization(data) {
     d3.select("#sliderYlim").transition().duration(300).style("opacity", "0");
 
     if (parameter)
+      //! Find way to add background
       labels
         .selectAll("text")
         .data(Object.keys(clusters))

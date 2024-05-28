@@ -2,6 +2,7 @@ body {
   font-family: "Hack", Arial, sans-serif;
   display: flex;
   margin: 0;
+  /* overflow-x: hidden; */
 }
 
 section {
@@ -22,8 +23,8 @@ h1 {
   align-items: center;
   flex-direction: column;
 }
-.h-6screen {
-  height: 600vh;
+.value-scroll {
+  height: 500vh;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -250,7 +251,14 @@ h2 {
   top: 25vh;
 }
 
+.border {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .chart {
+  /* overflow-y: scroll; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,9 +270,9 @@ h2 {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   --webkit-backdrop-filter: blur(5px);
-  /* border: 1px solid #ccc; */
+  border: 1px solid #000000;
+  border-radius: 10px;
   padding: 10px;
-  /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); */
   pointer-events: none;
 }
 
@@ -283,12 +291,17 @@ h2 {
   display: none;
 }
 
+.cluster-label {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
 .cluster-label,
 .legend-item {
   font-size: 0.6rem;
 }
 
-a {
+footer a {
   color: white;
 }
 
@@ -315,13 +328,13 @@ a {
   width: 100%;
   height: 100vh;
   z-index: 2;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
 }
 
 #hero-grid {
   position: absolute;
-  width: 95vw;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -330,6 +343,8 @@ a {
   gap: 0px;
   margin: 0 auto;
   z-index: 0;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
 }
 
 #hero-grid img {
@@ -343,11 +358,64 @@ a {
   filter: blur(0px);
 }
 
+.map-container {
+  display: flex;
+}
+
+#country-links-container {
+  width: 30%;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+#country-links-container ul {
+  list-style-type: circle;
+  font-size: small;
+  padding-bottom: 10px;
+  border-bottom: #000 solid 1px;
+}
+#country-links-container ul:last-child {
+  border-bottom: none;
+}
+#country-links-container a {
+  color: #000;
+}
+
+#country-links-container li + li {
+  margin-top: 10px;
+}
+
 footer {
   background-color: #000000;
   color: #ffffff;
   padding: 1rem;
   display: flex;
+}
+
+.tips-wrapper {
+  width: 66%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 1rem;
+}
+
+.tip {
+  width: 26%;
+  height: 190px;
+  display: inline-flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 20px;
+  border: 1px solid #000;
+}
+
+.emoji {
+  margin: 0;
 }
 
 @media screen {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Breaches</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -36,7 +37,7 @@
                 has changed in the last 25 years.</p>
             <div class="scroll-section-100">
 
-                <div id="line_chart" class="graph_placeholder sticky background"></div>
+                <div id="line_chart" class="chart graph_placeholder sticky background"></div>
                 <p class="textbox foreground ">In just three decades the number of people connected to the
                     internet went from from
                     basically zero to almost 5 billion. Phones, Tablets, and Personal Computers (and also Fridges) now
@@ -140,7 +141,7 @@
 
                 </div>
                 <div class="col">
-                    <div id="pizza-phases" class=" sticky">
+                    <div id="pizza-phases" class="chart sticky">
                         <!-- <canvas id="canvas" width="200" height="500"></canvas> -->
                         <!-- <p id="p-state">00</p> -->
                     </div>
@@ -153,7 +154,20 @@
             </div>
         </section>
 
-        <section class="text-wrapper">
+        <section class="text-wrapper" data-title="Policies">
+            <h2>Data Regulation in the world</h2>
+            <div class="map-container">
+                <svg id="data_map_svg" width="800" height="400"></svg>
+                <div id="country-links-container" class="border">
+                    Click on a country to select it and see the links for their official documents
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <section class="text-wrapper" data-title="Data Breaches">
             <h2>Data Breaches 📉</h2>
             <p class="textbox">A
                 <strong>
@@ -164,22 +178,7 @@
                 account numbers, healthcare data) or corporate data (customer data records, intellectual property,
                 financial information). [IBM]
             </p>
-            <p class="textbox">Always according to the IBM Data Breach Report of 2023, the average cost of a Data Breach
-                is 4.45 Million dollars, and the cost of a single stolen record has reached 165$...
-            </p>
-            <p class="textbox">
-                Let me say it again: 165$
-            </p>
-            <p class="textbox">
-                165$, that's how your data is worth. It seems like we are talking about stock market values, with
-                NASDAQ, Nikkei, or BitCoin gaining or losing value over time. But we are not.
 
-            </p>
-            <p class="textbox">
-                This does not apply to private companies only; as I’m writing this article, on May 14th, 2024, The City
-                of Helsinki’s educational and training departments were victims of a major data breach that potentially
-                stole around 120.000 data belonging to pupils, guardians, and City employees.
-            </p>
             <div id="controls">
                 <!-- <button onclick="groupBy('year')">Group by Year</button>
             <button onclick="groupBy('industry')">Group by Industry</button> -->
@@ -219,7 +218,7 @@
                     </strong>
                 </p>
             </div>
-            <div class="h-6screen">
+            <div class="value-scroll">
                 <h3 class="pizza-title">Value 💰</h3>
                 <p id="counter" class="huge-text sticky background">
                     0
@@ -246,6 +245,69 @@
                     This can lead to various uses of one’s data: from extremely targeted advertising to more toxic and
                     dangerous practices, such as Doxing: the unavailing of someone’s private and sensible information,
                     such as the home address. </p>
+            </div>
+            <div class="h-screen">
+                <h3 class="pizza-title">Reputation 💃</h3>
+                <p class="textbox">
+                    This leads us to our reputation era.
+                </p>
+                <p class="textbox">
+                    Whatever action you do online is going to build an indelible digital footprint, that will hunt you
+                    down forever. Deleting an Instagram account is a fairly easy task, but getting your data back from
+                    brokers is a way different kettle of fish.
+                </p>
+                <p class="textbox">
+                    Here’s a good thing: amongst the swirling sea of users roaming the internet everyday, **you are
+                    unique.** (If you don’t believe that check this out https://amiunique.org/fingerprint).
+                </p>
+                <p class="textbox">
+                    And it’s this uniqueness that makes you stand out, allowing companies, marketers, and potentially
+                    harmful individuals to reach you with ease.</p>
+                <p class="textbox">
+                    We put ourselves in the hands of big companies: our faces, our voices, and our thoughts.
+                </p>
+                <p class="textbox">
+                    But there are some ways in which you can reduce your digital footprint:
+                </p>
+                <div class="tips-wrapper">
+                    <div class="tip">
+                        <p class="emoji">🙅</p>
+                        <p class="tip-content">Delete or Deactivate Old Shopping, Social Network, and old email accounts
+                        </p>
+                    </div>
+                    <div class="tip">
+                        <p class="emoji">🙅</p>
+                        <p class="tip-content">Remove Yourself from Data Collection Sites
+                        </p>
+                    </div>
+                    <div class="tip">
+                        <p class="emoji">️⚙️</p>
+                        <p class="tip-content">Check Your Privacy Settings
+                        </p>
+                    </div>
+                    <div class="tip">
+                        <p class="emoji">️🥸</p>
+                        <p class="tip-content">Use Stealth or Incognito Mode (or Even Tor) </p>
+                    </div>
+                    <div class="tip">
+                        <p class="emoji">🙏</p>
+                        <p class="tip-content">Ask for a Website to Remove You from a Database Directly
+                        </p>
+                    </div>
+                    <div class="tip">
+                        <p class="emoji">️📜</p>
+                        <p class="tip-content">Use the GDPR Right to be Forgotten https://gdpr-info.eu/art-17-gdpr/
+                        </p>
+                    </div>
+                    <div class="tip">
+                        <p class="emoji">️🥸</p>
+                        <p class="tip-content">Finally, beware of Daft Surveys
+
+                            (Maybe knowing which Power Ranger you are is not worth it after all)
+                        </p>
+                    </div>
+
+                </div>
             </div>
         </section>
         <footer>
@@ -286,6 +348,7 @@
     <script src="scripts/scatter_cluster.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/counter.js"></script>
+    <script src="scripts/map.js"></script>
     <!-- <script src="libraries/p5.min.js"></script>
     <script src="scripts/sketch.js"></script> -->
 
