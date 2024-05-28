@@ -114,9 +114,9 @@ function createLineChart(data) {
     .append("circle")
     .attr("cx", 100)
     .attr("cy", function (d, i) {
-      return 100 + i * 25;
+      return 100 + i * 20;
     }) // 100 is where the first dot appears. 25 is the distance between dots
-    .attr("r", 7)
+    .attr("r", 5)
     .style("fill", function (d) {
       return color(d[0]);
     });
@@ -126,15 +126,16 @@ function createLineChart(data) {
     .data(sumstat)
     .enter()
     .append("text")
-    .attr("x", 120)
+    .attr("x", 110)
     .attr("y", function (d, i) {
-      return 100 + i * 27;
+      return 103 + i * 20;
     }) // 100 is where the first dot appears. 25 is the distance between dots
     .style("fill", "black")
     .text(function (d) {
       console.log(d);
       return d[0];
     })
+    .attr("class", "legend-item")
     .attr("text-anchor", "left")
     .style("alignment-baseline", "middle");
 }

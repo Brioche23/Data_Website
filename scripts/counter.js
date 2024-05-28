@@ -50,6 +50,35 @@ document.addEventListener("scroll", function () {
     }
   });
 
+  let sections = document.querySelectorAll("section");
+  let black = false;
+  let body = document.querySelector("body");
+  sections.forEach((s) => {
+    let s_bcr = s.getBoundingClientRect();
+    let isNotHiddenBelow =
+      s_bcr.y < window.innerHeight - window.innerHeight / 4;
+    let isNotHiddenAbove = s_bcr.y > 0;
+    // console.log(p.id, isNotHiddenBelow, isNotHiddenAbove);
+
+    if (isNotHiddenAbove && isNotHiddenBelow) {
+      // console.log(p.id + "my element is visible now");
+      // triggerInput.value = parseInt(p.dataset.value);
+      // console.log(p.dataset.value);
+      // p_state_text.innerHTML = p.id;
+      console.log(s.dataset.title);
+      // if (s.dataset.title == "Conclusion" && !black) {
+      //   body.style.backgroundColor = "black";
+      //   body.style.color = "white";
+      //   black = true;
+      // }
+      // if (black && s.dataset.title == "Data Breaches") {
+      //   body.style.backgroundColor = "white";
+      //   body.style.color = "black";
+      //   black = false;
+      // }
+    }
+  });
+
   //   // if(bcr.y < window.innerHeight && bcr.y > 0 ){
   //   //     console.log("it's visible!!")
   //   // }

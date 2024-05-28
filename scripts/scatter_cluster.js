@@ -162,11 +162,13 @@ function createVisualization(data) {
     .on("mouseout", hideTooltip);
 
   const labels = svg.append("g").attr("class", "cluster-labels");
+  // const labelBackgrounds = svg.append("g").attr("class", "cluster-labels-bg");
 
   const legend = svg.append("g").attr("transform", `translate(0,${height})`);
 
   const legendRectSize = 10;
   const legendSpacing = 6;
+  const legendCircleRadius = 5;
 
   // group the data: I want to draw one line per group
   const sumstat = d3.group(data, (d) => d.macrocat); // nest function allows to group the calculation per level of a factor
@@ -189,7 +191,7 @@ function createVisualization(data) {
   legendItem
     .append("circle")
     .attr("width", legendRectSize)
-    .attr("r", legendRectSize)
+    .attr("r", legendCircleRadius)
     .attr("fill", (d) => colorScale(d[0]));
 
   legendItem
@@ -223,6 +225,7 @@ function createVisualization(data) {
       .attr("cy", (d) => y(d.recordsAffected));
 
     labels.selectAll("text").remove();
+    labels.selectAll("rect").remove();
 
     if (simulation) {
       simulation.stop();
@@ -237,15 +240,32 @@ function createVisualization(data) {
 
     if (parameter)
       //! Find way to add background
-      labels
-        .selectAll("text")
+      labelBackgrounds = labels
+        .selectAll("rect")
         .data(Object.keys(clusters))
-        .join("text")
-        .attr("x", (d) => clusters[d].x)
-        .attr("y", (d) => clusters[d].y - 50)
-        .attr("text-anchor", "middle")
-        .attr("class", "cluster-label")
-        .text((d) => `${toTitleCase(d)} (${clusters[d].count})`);
+        .join("rect")
+        .attr("x", (d) => clusters[d].x - 50) // Adjust the padding as needed
+        .attr("y", (d) => clusters[d].y - 59) // Adjust the padding as needed
+        .attr("width", 110) // Adjust the width as needed
+        .attr("height", 12) // Adjust the height as needed
+        .attr("fill", "white")
+        .attr("class", "label-background");
+
+    labels
+      .selectAll("text")
+      .data(Object.keys(clusters))
+      .join("text")
+      .attr("x", (d) => clusters[d].x)
+      .attr("y", (d) => clusters[d].y - 50)
+      .attr("text-anchor", "middle")
+      .attr("class", "cluster-label")
+      .text((d) => {
+        let name;
+        if (d === "united states") {
+          name = "USA";
+        } else name = toTitleCase(d);
+        return `${name} (${clusters[d].count})`;
+      });
 
     simulation = d3
       .forceSimulation(data)

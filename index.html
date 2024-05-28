@@ -10,6 +10,15 @@
 </head>
 
 <body>
+    <!-- <div id="modal-wrapper">
+        <div id="modal" class="border">
+            <p>This website does not use cookies 🍪, by clicking below you are not allowing anything</p>
+            <div class="modal-controls">
+                <button class="input" id="modalAccept" onclick="hideModal()">Accept</button>
+                <button class="input" id="modalDeny" onclick="hideModal()">Deny</button>
+            </div>
+        </div>
+    </div> -->
     <div class="container crt-scanlines">
         <!-- Add this inside the body tag -->
         <section class="hero-wrapper">
@@ -154,20 +163,21 @@
             </div>
         </section>
 
-        <section class="text-wrapper" data-title="Policies">
-            <h2>Data Regulation in the world</h2>
-            <div class="map-container">
+        <section data-title="Policies">
+            <h2>Data Regulation 🧑‍⚖️</h2>
+            <p class="textbox">Between us and the companies and organizations collecting our data, there are countries
+                and policymakers. The deliberate use of our data by third parties is regulated by country-based
+                legislation. According to the UN, out of 194 countries, 137 have legislation to secure data privacy.
+            </p>
+            <div class="map-container chart">
                 <svg id="data_map_svg" width="800" height="400"></svg>
                 <div id="country-links-container" class="border">
                     Click on a country to select it and see the links for their official documents
                 </div>
             </div>
-
-
-
         </section>
 
-        <section class="text-wrapper" data-title="Data Breaches">
+        <section data-title="Data Breaches">
             <h2>Data Breaches 📉</h2>
             <p class="textbox">A
                 <strong>
@@ -204,22 +214,22 @@
                 <!-- <p>Links: <span id="links"></span></p> -->
             </div>
         </section>
-        <section class="text-wrapper">
-            <div class="h-screen">
-                <h2>In big tech, we trust (?)</h2>
-                <p class="textbox">
-                    When dealing with data online, we have to consider two main factors:
-                    <strong>
-                        value
-                    </strong>
-                    and
-                    <strong>
-                        reputation.
-                    </strong>
-                </p>
-            </div>
+        <section class="h-screen" data-title="Conclusion">
+            <h2>In big tech, we trust (?)</h2>
+            <p class="textbox">
+                When dealing with data online, we have to consider two main factors:
+                <strong>
+                    value
+                </strong>
+                and
+                <strong>
+                    reputation.
+                </strong>
+            </p>
+        </section>
+        <section data-title="Conclusion">
             <div class="value-scroll">
-                <h3 class="pizza-title">Value 💰</h3>
+                <h2 class="pizza-title">Value 💰</h2>
                 <p id="counter" class="huge-text sticky background">
                     0
                     <!-- <span>$</span> -->
@@ -246,68 +256,69 @@
                     dangerous practices, such as Doxing: the unavailing of someone’s private and sensible information,
                     such as the home address. </p>
             </div>
-            <div class="h-screen">
-                <h3 class="pizza-title">Reputation 💃</h3>
-                <p class="textbox">
-                    This leads us to our reputation era.
-                </p>
-                <p class="textbox">
-                    Whatever action you do online is going to build an indelible digital footprint, that will hunt you
-                    down forever. Deleting an Instagram account is a fairly easy task, but getting your data back from
-                    brokers is a way different kettle of fish.
-                </p>
-                <p class="textbox">
-                    Here’s a good thing: amongst the swirling sea of users roaming the internet everyday, **you are
-                    unique.** (If you don’t believe that check this out https://amiunique.org/fingerprint).
-                </p>
-                <p class="textbox">
-                    And it’s this uniqueness that makes you stand out, allowing companies, marketers, and potentially
-                    harmful individuals to reach you with ease.</p>
-                <p class="textbox">
-                    We put ourselves in the hands of big companies: our faces, our voices, and our thoughts.
-                </p>
-                <p class="textbox">
-                    But there are some ways in which you can reduce your digital footprint:
-                </p>
-                <div class="tips-wrapper">
-                    <div class="tip">
-                        <p class="emoji">🙅</p>
-                        <p class="tip-content">Delete or Deactivate Old Shopping, Social Network, and old email accounts
-                        </p>
-                    </div>
-                    <div class="tip">
-                        <p class="emoji">🙅</p>
-                        <p class="tip-content">Remove Yourself from Data Collection Sites
-                        </p>
-                    </div>
-                    <div class="tip">
-                        <p class="emoji">️⚙️</p>
-                        <p class="tip-content">Check Your Privacy Settings
-                        </p>
-                    </div>
-                    <div class="tip">
-                        <p class="emoji">️🥸</p>
-                        <p class="tip-content">Use Stealth or Incognito Mode (or Even Tor) </p>
-                    </div>
-                    <div class="tip">
-                        <p class="emoji">🙏</p>
-                        <p class="tip-content">Ask for a Website to Remove You from a Database Directly
-                        </p>
-                    </div>
-                    <div class="tip">
-                        <p class="emoji">️📜</p>
-                        <p class="tip-content">Use the GDPR Right to be Forgotten https://gdpr-info.eu/art-17-gdpr/
-                        </p>
-                    </div>
-                    <div class="tip">
-                        <p class="emoji">️🥸</p>
-                        <p class="tip-content">Finally, beware of Daft Surveys
+        </section>
 
-                            (Maybe knowing which Power Ranger you are is not worth it after all)
-                        </p>
-                    </div>
-
+        <section data-title="Conclusion">
+            <h2 class="pizza-title">Reputation 💃</h2>
+            <p class="textbox">
+                This leads us to our reputation era.
+            </p>
+            <p class="textbox">
+                Whatever action you do online is going to build an indelible digital footprint, that will hunt you
+                down forever. Deleting an Instagram account is a fairly easy task, but getting your data back from
+                brokers is a way different kettle of fish.
+            </p>
+            <p class="textbox">
+                Here’s a good thing: amongst the swirling sea of users roaming the internet everyday, **you are
+                unique.** (If you don’t believe that check this out https://amiunique.org/fingerprint).
+            </p>
+            <p class="textbox">
+                And it’s this uniqueness that makes you stand out, allowing companies, marketers, and potentially
+                harmful individuals to reach you with ease.</p>
+            <p class="textbox">
+                We put ourselves in the hands of big companies: our faces, our voices, and our thoughts.
+            </p>
+            <p class="textbox">
+                But there are some ways in which you can reduce your digital footprint:
+            </p>
+            <div class="tips-wrapper">
+                <div class="tip">
+                    <p class="emoji">🙅</p>
+                    <p class="tip-content">Delete or Deactivate Old Shopping, Social Network, and old email accounts
+                    </p>
                 </div>
+                <div class="tip">
+                    <p class="emoji">🙅</p>
+                    <p class="tip-content">Remove Yourself from Data Collection Sites
+                    </p>
+                </div>
+                <div class="tip">
+                    <p class="emoji">️⚙️</p>
+                    <p class="tip-content">Check Your Privacy Settings
+                    </p>
+                </div>
+                <div class="tip">
+                    <p class="emoji">️🥸</p>
+                    <p class="tip-content">Use Stealth or Incognito Mode (or Even Tor) </p>
+                </div>
+                <div class="tip">
+                    <p class="emoji">🙏</p>
+                    <p class="tip-content">Ask for a Website to Remove You from a Database Directly
+                    </p>
+                </div>
+                <div class="tip">
+                    <p class="emoji">️📜</p>
+                    <p class="tip-content">Use the GDPR Right to be Forgotten https://gdpr-info.eu/art-17-gdpr/
+                    </p>
+                </div>
+                <div class="tip">
+                    <p class="emoji">️🥸</p>
+                    <p class="tip-content">Finally, beware of Daft Surveys
+
+                        (Maybe knowing which Power Ranger you are is not worth it after all)
+                    </p>
+                </div>
+
             </div>
         </section>
         <footer>
@@ -343,6 +354,7 @@
     <!-- <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script> -->
     <!-- <script src="simulation.js"></script> -->
     <!-- <script src="scatterplot.js"></script> -->
+    <script src="scripts/modal.js"></script>
     <script src="scripts/logoGrid.js"></script>
     <script src="scripts/line_chart.js"></script>
     <script src="scripts/scatter_cluster.js"></script>

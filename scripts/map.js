@@ -89,42 +89,44 @@ Promise.all([
       }
     })
     .on("click", function (event, d) {
-      const selected = d3.select(this).classed("selected");
+      if (csvDataMap.has(d.properties.name)) {
+        const selected = d3.select(this).classed("selected");
 
-      if (selected) {
-        d3.select(this)
-          .classed("selected", false)
-          .attr("fill", (d) => {
-            // Revert to original fill color
-            return csvDataMap.has(d.properties.name) ? "#69b3a2" : "#ccc";
-          })
-          .style("stroke-width", "1px"); // Revert to original stroke width
+        if (selected) {
+          d3.select(this)
+            .classed("selected", false)
+            .attr("fill", (d) => {
+              // Revert to original fill color
+              return csvDataMap.has(d.properties.name) ? "#69b3a2" : "#ccc";
+            })
+            .style("stroke-width", "1px"); // Revert to original stroke width
 
-        // Remove country links container
-        d3.select(`#country-links-${d.properties.name}`).remove();
-      } else {
-        d3.select(this)
-          .classed("selected", true)
-          .attr("fill", "#ffcc00") // Change fill color to indicate selection
-          .style("stroke-width", "2px"); // Increase stroke width to indicate selection
+          // Remove country links container
+          d3.select(`#country-links-${d.properties.name}`).remove();
+        } else {
+          d3.select(this)
+            .classed("selected", true)
+            .attr("fill", "#ffcc00") // Change fill color to indicate selection
+            .style("stroke-width", "2px"); // Increase stroke width to indicate selection
 
-        // Create country links container
-        const countryLinksList = countryLinksContainer
-          .insert("ul", ":first-child")
-          .attr("data-country", d.properties.name)
-          .attr("id", `country-links-${d.properties.name}`)
-          .attr("class", "country-links");
-        // Add country links to the list
-        const countryData = csvDataMap.get(d.properties.name);
-        if (countryData) {
-          countryLinksList.append("h3").html(`${d.properties.name}`);
-          countryData.forEach((linkObj) => {
-            countryLinksList
-              .append("li")
-              .html(
-                `<a href="${linkObj.link}" target="_blank">${linkObj.title}</a>`
-              );
-          });
+          // Create country links container
+          const countryLinksList = countryLinksContainer
+            .insert("ul", ":first-child")
+            .attr("data-country", d.properties.name)
+            .attr("id", `country-links-${d.properties.name}`)
+            .attr("class", "country-links");
+          // Add country links to the list
+          const countryData = csvDataMap.get(d.properties.name);
+          if (countryData) {
+            countryLinksList.append("h3").html(`${d.properties.name}`);
+            countryData.forEach((linkObj) => {
+              countryLinksList
+                .append("li")
+                .html(
+                  `<a href="${linkObj.link}" target="_blank">${linkObj.title}</a>`
+                );
+            });
+          }
         }
       }
     });
