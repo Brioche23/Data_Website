@@ -416,19 +416,27 @@ footer a {
   overflow-y: hidden; */
 }
 
+#hero-grid-wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  display: flex;
+  pointer-events: none;
+}
+
 #hero-grid {
   position: absolute;
-  width: 1440px;
+  width: 1280px;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0px;
   justify-content: center;
   gap: 0px;
   margin: 0 auto;
-  z-index: 0;
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
+
+  /* overflow-y: hidden; */
 }
 
 #hero-grid img {
@@ -444,8 +452,14 @@ footer a {
 
 .map-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0 1rem;
   gap: 10px;
+}
+
+.map-container .chart {
+  margin: 0;
 }
 
 #country-links-container {
