@@ -10,22 +10,23 @@
 </head>
 
 <body>
-    <main>
-        <nav id="navbar">
-
-        </nav>
-
-        <!-- <div id="modal-wrapper">
+    <div id="modal-wrapper">
         <div id="modal" class="border">
             <p>This website does not use cookies 🍪, by clicking below you are not allowing anything</p>
+            <p>[But for now the website is optimized for desktop visualization, so please watch it there]</p>
             <div class="modal-controls">
                 <button class="input" id="modalAccept" onclick="hideModal()">Accept</button>
                 <button class="input" id="modalDeny" onclick="hideModal()">Deny</button>
             </div>
         </div>
-    </div> -->
+    </div>
+    <main>
+
+        <nav id="navbar">
+
+        </nav>
         <!-- Add this inside the body tag -->
-        <section id="hero" class="hero-wrapper" data-title="🩸">
+        <section id="hero" class="hero-wrapper" data-title="" data-emoji="🩸">
             <div id="hero-grid"></div>
 
             <div class="hero-bg">
@@ -34,7 +35,7 @@
             </div>
 
         </section>
-        <section id="internet" data-title="The Internet of people 🗣️">
+        <section id="internet" data-title="The Internet of people" data-emoji="🗣️">
             <h2>The Internet of people 🗣️</h2>
             <p class="textbox">In our fully digitalised corporate-led world, Data has become the biggest source of
                 power.
@@ -65,7 +66,7 @@
                 give
                 away, and where that data ends up.</p>
         </section>
-        <section id="pizza" class="pizza" data-title="Pizza Time 🍕">
+        <section id="pizza" class="pizza" data-title="Pizza Time" data-emoji="🍕">
             <!-- Make Sticky section with 6 paragraphs and a counter going from 1 to 6 while the paragraphs appear -->
             <h2 class="">Pizza Time 🍕</h2>
             <p class="textbox">In an article, the Wall Street Journal showed how much potential data we give away
@@ -176,22 +177,25 @@
             </div>
         </section>
 
-        <section id="regulation" data-title="Data Regulation 🧑‍⚖️">
+        <section id="regulation" data-title="Data Regulation" data-emoji="🧑‍⚖️">
             <h2>Data Regulation 🧑‍⚖️</h2>
             <p class="textbox">Between us and the companies and organizations collecting our data, there are
                 countries
                 and policymakers. The deliberate use of our data by third parties is regulated by country-based
-                legislation. According to the UN, out of 194 countries, 137 have legislation to secure data privacy.
+                legislation. According to the UN,
+                <strong>
+                    out of 194 countries, 137 have legislation to secure data privacy.
+                </strong>
             </p>
             <div class="map-container chart">
-                <svg id="data_map_svg" width="800" height="400"></svg>
+                <svg id="data_map_svg" class="border" width="600" height="400"></svg>
                 <div id="country-links-container" class="border">
                     Click on a country to select it and see the links for their official documents
                 </div>
             </div>
         </section>
 
-        <section id="breaches" data-title="Data Breaches 📉">
+        <section id="breaches" data-title="Data Breaches" data-emoji="📉">
             <h2>Data Breaches 📉</h2>
             <p class="textbox">A
                 <strong>
@@ -229,7 +233,7 @@
                 <!-- <p>Links: <span id="links"></span></p> -->
             </div>
         </section>
-        <section id="conclusion" class="h-screen" data-title="Conclusion">
+        <section id="conclusion" class="h-screen" data-title="Conclusion" data-emoji="📜">
             <h2>In big tech, we trust (?)</h2>
             <p class="textbox">
                 When dealing with data online, we have to consider two main factors:
@@ -289,8 +293,12 @@
                 brokers is a way different kettle of fish.
             </p>
             <p class="textbox">
-                Here’s a good thing: amongst the swirling sea of users roaming the internet everyday, **you are
-                unique.** (If you don’t believe that check this out https://amiunique.org/fingerprint).
+                Here’s a good thing: amongst the swirling sea of users roaming the internet everyday,
+                <strong>
+                    ✨ you are unique.✨
+                </strong>
+                (If you don’t believe that check <a href="https://amiunique.org/fingerprint" target="_blank">this</a>
+                out).
             </p>
             <p class="textbox">
                 And it’s this uniqueness that makes you stand out, allowing companies, marketers, and potentially
@@ -344,38 +352,28 @@
     </main>
 
     <footer>
-        <div>
-            <p>References</p>
-            <ul>
-                <li><a href="https://www.wsj.com/graphics/how-pizza-night-can-cost-more-in-data-than-dollars/">How
-                        Pizza Night Can Cost More in Data Than Dollars</a></li>
-                <li><a href="">Article 1</a></li>
-                <li><a href="">Article 1</a></li>
-                <li><a href="">Article 1</a></li>
-                <li><a href="">Article 1</a></li>
-            </ul>
+        <div class="ref-wrapper">
+            <div>
+                <p>References</p>
+                <ul id="ft-ref">
+
+                </ul>
+            </div>
+            <div>
+                <p>Datasets</p>
+                <ul id="ft-data">
+
+                </ul>
+            </div>
         </div>
         <div>
-            <p>Datasets</p>
-            <ul>
-                <li><a href="">Data 1</a></li>
-                <li><a href="">Data 1</a></li>
-                <li><a href="">Data 1</a></li>
-                <li><a href="">Data 1</a></li>
-                <li><a href="">Data 1</a></li>
-            </ul>
-        </div>
-        <div>
-            <p>Information Design 2024</p>
-            <p>Aalto University</p>
-            <p>Made by <a href="https://www.alessiobrioschi.it/">Alessio Brioschi</a></p>
+            <p>Information Design 2024 | Aalto University | Made by <a href="https://www.alessiobrioschi.it/">Alessio
+                    Brioschi</a></p>
         </div>
     </footer>
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <!-- <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script> -->
-    <!-- <script src="simulation.js"></script> -->
-    <!-- <script src="scatterplot.js"></script> -->
+
     <script src="scripts/modal.js"></script>
     <script src="scripts/logoGrid.js"></script>
     <script src="scripts/line_chart.js"></script>
@@ -383,6 +381,7 @@
     <script src="scripts/scroll.js"></script>
     <script src="scripts/counter.js"></script>
     <script src="scripts/map.js"></script>
+    <script src="scripts/footer.js"></script>
     <!-- <script src="libraries/p5.min.js"></script>
     <script src="scripts/sketch.js"></script> -->
 

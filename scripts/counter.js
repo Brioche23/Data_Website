@@ -88,10 +88,13 @@ let sections = document.querySelectorAll("section");
 let nav = document.querySelector("#navbar");
 console.log(nav);
 sections.forEach((s) => {
-  if (s.dataset.title) {
+  if (s.dataset.emoji) {
     console.log(s);
     const nav_el = document.createElement("li");
-    nav_el.innerHTML = `<a href="#${s.id}" >${s.dataset.title}</a>`;
+    nav_el.innerHTML = `<a href="#${s.id}" >
+    <span class="nav-title"> ${s.dataset.title}</span>
+    <span class="nav-emoji"> ${s.dataset.emoji}</span>
+   </a>`;
     nav.appendChild(nav_el);
   }
 });

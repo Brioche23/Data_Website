@@ -1,7 +1,8 @@
 body {
   font-family: "Hack", Arial, sans-serif;
-  /* overflow: hidden; */
-  overflow-x: hidden;
+  width: 100vw;
+  overflow: hidden;
+  /* overflow-x: hidden; */
   margin: 0;
   /* transition: all;
   transition-duration: 5000ms;
@@ -16,15 +17,17 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 nav {
   overflow: hidden;
   position: sticky;
   top: 0;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 20px;
   padding: 10px;
   /* background-color: rgba(255, 255, 255, 0.5); */
   z-index: 30;
@@ -39,12 +42,19 @@ nav li a {
   color: #000;
   text-decoration: none;
 }
+nav li a:hover {
+  font-weight: 700;
+}
 
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 2rem;
+  margin: 5rem 0;
+}
+
+section#hero {
+  margin: 0rem;
 }
 
 #modal-wrapper {
@@ -55,7 +65,7 @@ section {
   align-items: center;
   place-content: center;
   background-color: rgba(255, 255, 255, 1);
-  z-index: 10;
+  z-index: 40;
 }
 
 #modal {
@@ -63,13 +73,16 @@ section {
   display: flex;
   flex-direction: column;
   place-content: center;
+  padding: 2rem;
 }
 
 .modal-controls {
-  /* width: 80%; */
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding-top: 2rem;
+  margin: 0 auto;
 }
 
 h1 {
@@ -316,7 +329,7 @@ h2 {
 }
 
 .chart {
-  /* overflow-x: scroll; */
+  overflow-x: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -418,6 +431,8 @@ footer a {
 
 .map-container {
   display: flex;
+  padding: 0 1rem;
+  gap: 10px;
 }
 
 #country-links-container {
@@ -426,7 +441,8 @@ footer a {
   overflow-y: scroll;
 }
 
-#country-links-container ul {
+#country-links-container ul,
+footer ul {
   list-style-type: circle;
   font-size: small;
   padding-bottom: 10px;
@@ -439,7 +455,8 @@ footer a {
   color: #000;
 }
 
-#country-links-container li + li {
+#country-links-container li + li,
+footer li + li {
   margin-top: 10px;
 }
 
@@ -451,8 +468,17 @@ footer a {
 footer {
   background-color: #000000;
   color: #ffffff;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
+  flex-direction: column;
+  /* justify-content: center ; */
+}
+
+.ref-wrapper {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 2rem;
+  padding-bottom: 1rem;
 }
 
 .tips-wrapper {
@@ -481,7 +507,10 @@ footer {
   margin: 0;
 }
 
-@media screen {
+@media screen and (max-width: 700px) {
+  .nav-title {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 600px), screen and (min-height: 900px) {
