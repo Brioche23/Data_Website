@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Hack";
+  src: url(assets/fonts/Hack-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Hack";
+  src: url(assets/fonts/Hack_Bold.woff2);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Lovelace";
+  src: url(assets/fonts/Lovelace_Script_Medium.woff2);
+  font-weight: normal;
+}
+
 *,
 html {
   scroll-behavior: smooth !important;
@@ -95,7 +111,7 @@ section#hero {
 }
 
 h1 {
-  font-family: "Lovelace Script Trial", "Times New Roman", Times, serif;
+  font-family: "Lovelace", "Times New Roman", Times, serif;
   font-weight: 700;
   font-size: 40px;
   margin: 0;
