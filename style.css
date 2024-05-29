@@ -307,6 +307,14 @@ h2 {
   margin-bottom: 2rem;
 }
 
+.textbox a {
+  color: #000;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
 .margin-top-half-screen {
   margin-top: 50vh;
 }
@@ -514,7 +522,6 @@ footer {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: center ; */
 }
 
 .ref-wrapper {
@@ -522,10 +529,15 @@ footer {
   /* justify-content: space-between; */
   gap: 2rem;
   padding-bottom: 1rem;
+  justify-content: center;
+}
+
+footer p {
+  text-align: center;
 }
 
 .tips-wrapper {
-  width: 66%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -535,7 +547,7 @@ footer {
 }
 
 .tip {
-  width: 26%;
+  width: 40%;
   height: 190px;
   display: inline-flex;
   padding: 20px;
