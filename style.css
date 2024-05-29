@@ -1,15 +1,24 @@
+*,
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: "Hack", Arial, sans-serif;
   width: 100vw;
-  overflow: hidden;
-  /* overflow-x: hidden; */
+  /* overflow: hidden; */
+  overflow-x: hidden;
   margin: 0;
   /* transition: all;
   transition-duration: 5000ms;
   animation-timing-function: ease-in-out; */
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   /* display: flex;
   /* overflow-x: hidden; */
+}
+
+text {
+  font-family: "Hack", Arial, sans-serif;
 }
 
 main {
@@ -87,7 +96,7 @@ section#hero {
 
 h1 {
   font-family: "Lovelace Script Trial", "Times New Roman", Times, serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 40px;
   margin: 0;
 }
@@ -173,6 +182,14 @@ h1 {
   transition: all;
   animation-duration: 500ms;
   animation-timing-function: ease-in-out;
+}
+
+datalist {
+  display: flex;
+  justify-content: space-between;
+  /* color: red; */
+  width: 100%;
+  font-size: small;
 }
 
 input[type="range"] {
@@ -267,8 +284,8 @@ h2 {
 }
 
 .textbox {
-  font-size: 1rem; /* 16px */
-  line-height: 1.5rem; /* 24px */
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
   width: 66%;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -290,12 +307,12 @@ h2 {
 }
 
 .graph_placeholder {
-  display: flex;
+  /* display: flex;
   place-content: center;
   align-items: center;
-  /* background-color: #f1f1f1; */
+  background-color: #f1f1f1; 
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; */
 }
 
 .sticky {
@@ -305,6 +322,7 @@ h2 {
   top: 25vh;
   min-height: 50vh;
 }
+
 .sticky-top {
   /* background-color: rgba(3, 172, 206, 0.5); */
   backdrop-filter: blur(10px);
@@ -329,7 +347,7 @@ h2 {
 }
 
 .chart {
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,11 +378,6 @@ h2 {
 
 .hidden {
   display: none;
-}
-
-.cluster-label {
-  background-color: #ffffff;
-  padding: 10px;
 }
 
 .cluster-label,
@@ -507,21 +520,125 @@ footer {
   margin: 0;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    text-align: center;
+    line-height: 32px;
+  }
+
+  main {
+    margin: 0 1rem;
+  }
+
+  h2 {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+
+  .textbox {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+    width: auto;
+  }
+
   .nav-title {
     display: none;
   }
-}
 
-@media only screen and (max-width: 600px), screen and (min-height: 900px) {
-  #hero-grid img {
-    height: 30px; /* Set a fixed height */
-    filter: blur(10px);
+  .scroll-section-100 {
+    width: 100%;
+    height: 200vh;
+    /* overflow: hidden; */
   }
-}
-@media only screen and (min-width: 1440px), screen and (min-height: 900px) {
-  #hero-grid img {
-    height: 60px; /* Set a fixed height */
-    filter: blur(30px);
+  .col-wrapper {
+    height: 650vh;
+    width: 100%;
+    flex-direction: column-reverse;
+    position: relative;
+  }
+
+  .col {
+    width: auto;
+  }
+
+  .pizza-text {
+    height: auto;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    --webkit-backdrop-filter: blur(10px);
+    top: 2rem;
+    padding: 1rem;
+    border: 1px black solid;
+    border-radius: 10px;
+    margin-bottom: 50vh;
+  }
+
+  #pizza-texts {
+    z-index: 10;
+  }
+
+  #pizza-dots {
+    position: sticky;
+    top: 25vh;
+    z-index: 0;
+  }
+
+  #controls {
+    /* width: 100%; */
+    flex-direction: column;
+  }
+
+  .chart {
+    width: 100%;
+    overflow: scroll hidden;
+    display: block;
+  }
+
+  .sticky {
+    top: 10vh;
+  }
+
+  .map-container {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  #country-links-container {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    max-height: 50vh;
+    margin: 0 auto;
+  }
+
+  .value-scroll {
+    width: 100%;
+  }
+
+  .huge-text {
+    font-size: 36px;
+  }
+
+  .counter-text {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+
+  .tips-wrapper {
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .tip {
+    width: 100%;
+    height: max-content;
+    box-sizing: border-box;
+  }
+
+  .ref-wrapper {
+    flex-direction: column;
   }
 }

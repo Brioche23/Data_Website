@@ -1,4 +1,10 @@
-let count_values = [0, 165, 4450000, 120000];
+// let count_values = [{ value: 0, label:"" }, 165, 4450000, 120000];
+let count_values = [
+  { value: 0, label: "" },
+  { value: 165, label: "$" },
+  { value: 4450000, label: "$" },
+  { value: 120000, label: " rec." },
+];
 
 function animateValue(obj, start, end, duration) {
   let startTimestamp = null;
@@ -14,6 +20,7 @@ function animateValue(obj, start, end, duration) {
 }
 
 const obj = document.getElementById("counter");
+const c_label = document.getElementById("counter-label");
 // animateValue(obj, 100, 0, 1000);
 
 let prevIndex;
@@ -41,10 +48,11 @@ document.addEventListener("scroll", function () {
           console.log(prevIndex);
           animateValue(
             obj,
-            count_values[newIndex],
-            count_values[newIndex + 1],
+            count_values[newIndex].value,
+            count_values[newIndex + 1].value,
             1000
           );
+          c_label.innerHTML = count_values[newIndex + 1].label;
         }
       }
     }

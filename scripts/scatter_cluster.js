@@ -8,7 +8,7 @@ let vw = Math.max(
 );
 
 // Set the dimensions and margins of the graph
-let margin = { top: 50, right: 80, bottom: 200, left: 80 },
+let margin = { top: 50, right: 80, bottom: 200, left: 100 },
   width = 900 - margin.left - margin.right,
   height = 1000 - margin.top - margin.bottom;
 
@@ -201,7 +201,10 @@ function createVisualization(data) {
     .text((d) => d[0]);
 
   function scatterPlot() {
-    d3.select("#sliderYlim").transition().duration(300).style("opacity", "1");
+    d3.select("#range-wrapper")
+      .transition()
+      .duration(300)
+      .style("opacity", "1");
     x.domain([2000, 2025]);
     svg
       .select(".myXaxis")
@@ -236,7 +239,10 @@ function createVisualization(data) {
 
     svg.select(".myXaxis").attr("opacity", "0");
     svg.select(".myYaxis").attr("opacity", "0");
-    d3.select("#sliderYlim").transition().duration(300).style("opacity", "0");
+    d3.select("#range-wrapper")
+      .transition()
+      .duration(300)
+      .style("opacity", "0");
 
     if (parameter)
       //! Find way to add background

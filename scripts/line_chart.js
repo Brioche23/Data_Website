@@ -30,7 +30,7 @@ d3.csv("data/Internet_users.csv", (d) => {
 // Now I can use this dataset:
 function createLineChart(data) {
   // set the dimensions and margins of the graph
-  const margin = { top: 50, right: 100, bottom: 50, left: 80 },
+  const margin = { top: 50, right: 50, bottom: 50, left: 100 },
     width = 700 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 

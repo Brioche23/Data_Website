@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="modal-wrapper">
+    <!-- <div id="modal-wrapper">
         <div id="modal" class="border">
             <p>This website does not use cookies 🍪, by clicking below you are not allowing anything</p>
             <p>[But for now the website is optimized for desktop visualization, so please watch it there]</p>
@@ -19,7 +19,7 @@
                 <button class="input" id="modalDeny" onclick="hideModal()">Deny</button>
             </div>
         </div>
-    </div>
+    </div> -->
     <main>
 
         <nav id="navbar">
@@ -27,7 +27,7 @@
         </nav>
         <!-- Add this inside the body tag -->
         <section id="hero" class="hero-wrapper" data-title="" data-emoji="🩸">
-            <div id="hero-grid"></div>
+            <!-- <div id="hero-grid"></div> -->
 
             <div class="hero-bg">
                 <h1>Will there be blood? <span>🩸</span></h1>
@@ -79,7 +79,7 @@
                 collected]
 
             <div class="col-wrapper">
-                <div class="col">
+                <div id="pizza-texts" class="col">
                     <div class=" pizza-text" id="pizza-01" data-value="0">
                         <h3 class="pizza-title">Planning 📱</h3>
                         <p>
@@ -163,7 +163,7 @@
                     </p>
 
                 </div>
-                <div class="col">
+                <div id="pizza-dots" class="col background">
                     <div id="pizza-phases" class="chart sticky">
                         <!-- <canvas id="canvas" width="200" height="500"></canvas> -->
                         <!-- <p id="p-state">00</p> -->
@@ -187,8 +187,11 @@
                     out of 194 countries, 137 have legislation to secure data privacy.
                 </strong>
             </p>
-            <div class="map-container chart">
-                <svg id="data_map_svg" class="border" width="600" height="400"></svg>
+            <div class="map-container">
+                <div class="chart">
+
+                    <svg id="data_map_svg" class="border" width="600" height="400"></svg>
+                </div>
                 <div id="country-links-container" class="border">
                     Click on a country to select it and see the links for their official documents
                 </div>
@@ -219,7 +222,20 @@
                 </select>
                 <button class="input" id="toggleButton">Toggle Scatterplot</button>
                 <!-- Add a slider -->
-                <input title="Slider" type="range" name="sliderYlim" id=sliderYlim min=".1" max="40" value="30" />
+                <div id="range-wrapper">
+
+                    <datalist id="tickmarks">
+                        <option value=".1" label="10M"></option>
+                        <!-- <option value="1"></option>
+                        <option value="10"></option>
+                        <option value="20"></option>
+                        <option value="30"></option> -->
+                        <option value="40" label="4B"></option>
+
+                    </datalist>
+                    <input title="Slider" type="range" name="sliderYlim" id=sliderYlim min=".1" max="40" value="30"
+                        list="tickmarks" />
+                </div>
             </div>
 
             <div class="chart" id="scatter_cluster_chart"></div>
@@ -249,10 +265,12 @@
         <section>
             <div class="value-scroll">
                 <h2 class="pizza-title">Value 💰</h2>
-                <p id="counter" class="huge-text sticky background">
-                    0
-                    <!-- <span>$</span> -->
-                </p>
+                <div class="huge-text sticky background">
+                    <p id="counter">
+                        0
+                    </p>
+                    <span id="counter-label"></span>
+                </div>
                 <p class="counter-text textbox foreground" data-index="0">
                     According to the IBM Data Breach Report of 2023 that’s the cost of a single stolen record.
                 </p>
@@ -367,8 +385,12 @@
             </div>
         </div>
         <div>
-            <p>Information Design 2024 | Aalto University | Made by <a href="https://www.alessiobrioschi.it/">Alessio
-                    Brioschi</a></p>
+            <p>
+                <a href="https://infodesign.aalto.fi/" target="_blank" rel="noopener noreferrer">Information Design</a>
+                2024 | Aalto University | Made by <a href="https://www.alessiobrioschi.it/" target="_blank"
+                    rel="noopener noreferrer">Alessio
+                    Brioschi</a>
+            </p>
         </div>
     </footer>
 
