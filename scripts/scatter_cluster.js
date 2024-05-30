@@ -79,9 +79,13 @@ function showTooltip(event, d) {
   //     .text(link)
   //     .append("br");
   // });
+
+  const section = document.querySelector("#breaches").getBoundingClientRect();
+
+  console.log(section);
   tooltip
     .classed("hidden", false)
-    .style("left", event.pageX + 5 + "px")
+    .style("left", event.pageX - section.left + 5 + "px")
     .style("top", event.pageY - 28 + "px");
 }
 
@@ -352,10 +356,10 @@ function createVisualization(data) {
 
   // A function that update the plot for a given ylim value
   function updatePlot() {
-    // Get the value of the button
+    // Get the value of the slider
     ylim = this.value;
 
-    // Update X axis
+    // Update Y axis
     y.domain([0, ylim * 100000000]);
     console.log(yAxis);
     yAxis.transition().duration(1000).call(d3.axisLeft(y));

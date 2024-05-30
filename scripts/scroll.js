@@ -23,6 +23,7 @@ let currentPhase;
 
 // Load and parse the CSV data
 let added_rows = 0;
+let printed_paragraphs = 0;
 d3.csv("data/data_story.csv").then((data) => {
   data.forEach((d, i) => {
     d.index = i; // add an index for easy reference
@@ -82,6 +83,11 @@ d3.csv("data/data_story.csv").then((data) => {
             draw_all = true;
             //! At 6 trigger rearrangement
           }
+          // if (printed_paragraphs == 6) {
+          //   console.log("End loop!");
+          //   draw_all = true;
+          //   //! At 6 trigger rearrangement
+          // }
 
           let circles = svg
             .data(data)
@@ -126,6 +132,7 @@ d3.csv("data/data_story.csv").then((data) => {
         if (newPhase !== currentPhase) {
           currentPhase = newPhase;
           console.log(currentPhase);
+          printed_paragraphs++;
           drawCompanyCircles(companies, currentPhase);
         }
       }
@@ -200,13 +207,18 @@ d3.csv("data/data_story.csv").then((data) => {
 function showPizzaTooltip(event, d) {
   console.log("Tooltip!");
   console.log(d);
+  console.log(event);
   const tooltip = d3.select("#pizza-tooltip");
   tooltip.select("#company-pizza-name").text(toTitleCase(d.company));
   tooltip.select("#pizza-content").text(d.content);
 
+  let section = document.querySelector("#pizza").getBoundingClientRect();
+
+  console.log(section);
+
   tooltip
     .classed("hidden", false)
-    .style("left", event.pageX + 5 + "px")
+    .style("left", event.pageX - section.left + 5 + "px")
     .style("top", event.pageY - 28 + "px");
 }
 

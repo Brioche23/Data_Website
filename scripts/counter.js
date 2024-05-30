@@ -93,16 +93,23 @@ document.addEventListener("scroll", function () {
 });
 
 let sections = document.querySelectorAll("section");
-let nav = document.querySelector("#navbar");
+let nav = document.querySelector("#nav_list");
 console.log(nav);
 sections.forEach((s) => {
   if (s.dataset.emoji) {
     console.log(s);
     const nav_el = document.createElement("li");
     nav_el.innerHTML = `<a href="#${s.id}" >
-    <span class="nav-title"> ${s.dataset.title}</span>
-    <span class="nav-emoji"> ${s.dataset.emoji}</span>
+    <span class="nav-title">${s.dataset.title}</span>
+    <span class="nav-emoji">${s.dataset.emoji}</span>
    </a>`;
     nav.appendChild(nav_el);
   }
 });
+
+const nav_el = document.createElement("li");
+nav_el.innerHTML = `<a href="about.html" >
+<span class="nav-title">About</span>
+<span class="nav-emoji">📄</span>
+</a>`;
+nav.appendChild(nav_el);

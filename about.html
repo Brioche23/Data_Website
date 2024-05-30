@@ -2,62 +2,128 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/img/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.png" type="image/x-icon" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+
 </head>
 
 <body>
     <main>
         <nav id="navbar">
-            <a href="/index.html">Home</a>
+            <ul>
+                <li>
+                    <a href="/index.html">Home 🩸</a>
+                </li>
+            </ul>
         </nav>
-        <zero-md src="assets/text/docs.md">
-            <template>
-                <link rel="stylesheet" href="style.css" />
-                <style>
-                    h1 {
-                        font-family: 'Hack', 'Courier New', Courier, monospace;
-                    }
+        <div id="layout">
 
-                    h2 {
-                        text-align: left;
-                    }
-
-                    main {
-                        margin: 0 2rem;
-                    }
-                </style>
-            </template>
-        </zero-md>
-    </main>
-    <footer>
-        <!-- <div class="ref-wrapper">
-            <div>
-                <p>References</p>
-                <ul id="ft-ref">
+            <div class="navigation">
+                <ul id="pp_list">
 
                 </ul>
+            </div>
+            <div id="markdown">
+                <zero-md src="assets/text/docs.md">
+                    <template>
+                        <link rel="stylesheet" href="style.css" />
+                        <style>
+                            h1 {
+                                font-family: "Hack", "Courier New", Courier, monospace;
+                                margin-top: 2rem;
+                                margin-bottom: 1rem;
+                            }
+
+                            h2 {
+                                text-align: left;
+                                margin-top: 1rem;
+                                margin-bottom: .5rem;
+                            }
+
+                            h3 {
+                                margin: 0;
+                            }
+
+                            a {
+                                color: #000;
+                            }
+
+                            #markdown {
+                                margin: 2rem;
+                            }
+
+                            /* 
+                        tr {
+                            border-top: #000 solid 1px;
+                        } */
+
+                            td {
+                                font-size: small;
+                                padding: 10px;
+                            }
+                        </style>
+                    </template>
+                </zero-md>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="ref-wrapper">
+            <div>
+                <p>References</p>
+                <ul id="ft-ref"></ul>
             </div>
             <div>
                 <p>Datasets</p>
-                <ul id="ft-data">
-
-                </ul>
+                <ul id="ft-data"></ul>
             </div>
-        </div> -->
+        </div>
         <div>
             <p>
                 <a href="https://infodesign.aalto.fi/" target="_blank" rel="noopener noreferrer">Information Design</a>
-                2024 | Aalto University | Made by <a href="https://www.alessiobrioschi.it/" target="_blank"
-                    rel="noopener noreferrer">Alessio
-                    Brioschi</a>
+                2024 | Aalto University | Made by
+                <a href="https://www.alessiobrioschi.it/" target="_blank" rel="noopener noreferrer">Alessio Brioschi</a>
             </p>
         </div>
     </footer>
 </body>
+
+<style>
+    #layout {
+        display: flex;
+    }
+
+    main {
+        margin-bottom: 3rem;
+    }
+</style>
+<script src="scripts/footer.js"></script>
+
+<!-- <script>
+
+
+    console.log("aaaa")
+    let pp_list = md_content.querySelectorAll("#pp_list")
+    let md_content = document.querySelector('#markdown')
+    let h1s = md_content.querySelectorAll("h1")
+    // let h2s = md_content.querySelectorAll("h2")
+    console.log(h1s)
+    h1s.forEach(h => {
+        console.log(h)
+        // const h2s = h.querySelectorAll("h2")
+        const nav_el = document.createElement("li");
+        nav_el.innerHTML = `<a href="#${h.id}" >
+            <span class="nav-title">${h.innerHTML}</span>
+            </a>`;
+        pp_list.appendChild(nav_el);
+
+
+    })
+</script> -->
 
 </html>
