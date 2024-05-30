@@ -549,6 +549,16 @@ footer p {
   font-size: 64px;
 }
 
+@media screen and (min-height: 1300px) {
+  #hero-grid {
+    width: 2100px;
+    position: absolute;
+  }
+  #hero-grid img {
+    height: 85px; /* Set a fixed height */
+  }
+}
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 24px;
