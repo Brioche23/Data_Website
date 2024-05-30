@@ -44,7 +44,7 @@ Promise.all([
     .join("path")
     .attr("fill", (d) => {
       // Check if the country is in the CSV data
-      return csvDataMap.has(d.properties.name) ? "#69b3a2" : "#ccc";
+      return csvDataMap.has(d.properties.name) ? "#377eb8" : "#ccc";
     })
     .attr("class", function (d) {
       return "Country";
@@ -62,7 +62,7 @@ Promise.all([
           .style("opacity", 0.5);
 
         d3.select(event.originalTarget)
-          .attr("fill", "#ffcc00") // Change fill color on hover
+          .attr("fill", "#e41a1c") // Change fill color on hover
           .style("stroke-width", "2px") // Increase stroke width on hover
           .transition()
           .duration(200)
@@ -83,7 +83,7 @@ Promise.all([
           //   .duration(200)
           .attr("fill", (d) => {
             // Revert to original fill color
-            return csvDataMap.has(d.properties.name) ? "#69b3a2" : "#ccc";
+            return csvDataMap.has(d.properties.name) ? "#377eb8" : "#ccc";
           })
           .style("stroke-width", "1px"); // Revert to original stroke width
       }
@@ -97,7 +97,7 @@ Promise.all([
             .classed("selected", false)
             .attr("fill", (d) => {
               // Revert to original fill color
-              return csvDataMap.has(d.properties.name) ? "#69b3a2" : "#ccc";
+              return csvDataMap.has(d.properties.name) ? "#377eb8" : "#ccc";
             })
             .style("stroke-width", "1px"); // Revert to original stroke width
 
@@ -106,7 +106,7 @@ Promise.all([
         } else {
           d3.select(this)
             .classed("selected", true)
-            .attr("fill", "#ffcc00") // Change fill color to indicate selection
+            .attr("fill", "#e41a1c") // Change fill color to indicate selection
             .style("stroke-width", "2px"); // Increase stroke width to indicate selection
 
           // Create country links container

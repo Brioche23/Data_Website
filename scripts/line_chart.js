@@ -80,7 +80,7 @@ function createLineChart(data) {
       "#4daf4a",
       "#984ea3",
       "#ff7f00",
-      "#ffff33",
+      "#0b00b3",
       "#a65628",
       "#f781bf",
       "#999999",

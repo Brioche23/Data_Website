@@ -66,7 +66,7 @@ For the realization of this website I’ve used multiple datasets, some of them 
 
 But the one data frame that underwent the most elaboration was definitely the Data Breaches one. Let’s take a look at how I processed and cleaned it using Python and Pandas.
 
-I started with `data_breches.csv`, an already cleaned-up file that gathers 347 big data breaches from the Wikipedia page.
+I started with **data_breches.csv**, an already cleaned-up file that gathers 347 big data breaches from the Wikipedia page.
 
 I wanted to add more information to the records, so I found this huge dataset of more than 7 million companies, but the titles didn’t match. So I’ve manually added a company_name column to the breaches, matching exactly the name of the company. Then I merged them.
 

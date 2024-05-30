@@ -206,15 +206,14 @@ d3.csv("data/data_story.csv").then((data) => {
 
 function showPizzaTooltip(event, d) {
   console.log("Tooltip!");
-  console.log(d);
-  console.log(event);
+
   const tooltip = d3.select("#pizza-tooltip");
   tooltip.select("#company-pizza-name").text(toTitleCase(d.company));
   tooltip.select("#pizza-content").text(d.content);
 
   let section = document.querySelector("#pizza").getBoundingClientRect();
 
-  console.log(section);
+  // console.log(section);
 
   tooltip
     .classed("hidden", false)

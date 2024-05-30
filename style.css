@@ -22,7 +22,7 @@ html {
 body {
   font-family: "Hack", Arial, sans-serif;
   width: 100vw;
-  /* overflow: hidden; */
+  overflow: hidden;
   overflow-x: hidden;
   margin: 0;
   /* transition: all;
@@ -406,15 +406,15 @@ footer a {
   margin: 0 0.2rem;
 }
 .direct {
-  background-color: steelblue;
-  color: steelblue;
-  fill: steelblue;
+  background-color: #377eb8;
+  color: #377eb8;
+  fill: #377eb8;
 }
 .additional {
-  background-color: orange;
-  color: orange;
+  background-color: #e41a1c;
+  color: #e41a1c;
 
-  fill: orange;
+  fill: #e41a1c;
 }
 
 #hero-canvas {
