@@ -22,7 +22,7 @@ html {
 body {
   font-family: "Hack", Arial, sans-serif;
   width: 100vw;
-  overflow: hidden;
+  /* overflow: hidden; */
   overflow-x: hidden;
   margin: 0;
   /* transition: all;
