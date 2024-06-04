@@ -152,6 +152,18 @@ function createVisualization(data) {
 
   const yAxis = svg.append("g").call(d3.axisLeft(y)).attr("class", "myYaxis");
 
+  const yLabel = svg
+    .append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("fill", "currentColor")
+    .attr("y", 6)
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("# of records affected");
+
+  // .style("opacity", "0");
+
   const circles = svg
     .append("g")
     .selectAll("circle")
@@ -225,6 +237,8 @@ function createVisualization(data) {
       .attr("opacity", "1")
       .call(d3.axisLeft(y));
 
+    yLabel.transition().duration(2000).attr("opacity", "1");
+
     circles
       .transition()
       .duration(2000)
@@ -241,8 +255,9 @@ function createVisualization(data) {
   function clusterView(parameter) {
     const clusters = createClusters(data, parameter);
 
-    svg.select(".myXaxis").attr("opacity", "0");
-    svg.select(".myYaxis").attr("opacity", "0");
+    svg.select(".myXaxis").transition().duration(100).attr("opacity", "0");
+    svg.select(".myYaxis").transition().duration(100).attr("opacity", "0");
+    svg.select(".y.label").transition().duration(100).attr("opacity", "0");
     d3.select("#range-wrapper")
       .transition()
       .duration(300)
